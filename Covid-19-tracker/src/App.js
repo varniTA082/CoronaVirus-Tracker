@@ -109,6 +109,8 @@ console.log('countryinfo', countryInfo);
 
   <div className="app__stats">
         <InfoBox 
+        isRed
+        active={casesType === "cases"}
         onClick={(e) => setCasesType("cases")}
         title="Coronavirus cases"
          cases={prettyPrintStat(countryInfo.todayCases)} 
@@ -116,6 +118,7 @@ console.log('countryinfo', countryInfo);
          />
         
         <InfoBox 
+        active={casesType === "recovered"}
         onClick={(e) => setCasesType("recovered")}
         title="Recovered" 
         cases={prettyPrintStat(countryInfo.todayRecovered)} 
@@ -123,6 +126,8 @@ console.log('countryinfo', countryInfo);
         />
 
         <InfoBox 
+        isRed
+        active={ casesType === "deaths"}
         onClick={(e) => setCasesType("deaths")}
         title="Deaths" 
         cases={prettyPrintStat(countryInfo.todayDeaths)} 
@@ -145,9 +150,9 @@ console.log('countryinfo', countryInfo);
         <h3>Live Cases by Country</h3>
         <Table countries={tableData}/>
         <br/>
-        <h3>Worldwide new cases</h3>
-
-        <LineGraph/>
+        <h3 className="app__graphTitle">Worldwide new {casesType}</h3>
+        <br/>
+        <LineGraph className="app__graph" casesType={casesType}/>
       </CardContent>
     
     

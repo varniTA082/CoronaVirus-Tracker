@@ -20,25 +20,37 @@ const casesTypeColors = {
       //  rgb: "rgb(251, 68, 67)",
       //  half_op: "rgba(251,68,67,0.5)",
         multiplier:2000,
-    }
+    },
 };
+
 
 export const sortData = (data) => {
     const sortedData = [...data];
-    sortedData.sort((a,b) => {
 
-        console.log(a.cases);
+    // sortedData.sort((a,b) => {
 
-        if(a.cases > b.cases){
-            return -1;
-        }
-        else {
-            return 1;
-        }
-    });
-    return sortedData;
-}
+    //     console.log(a.cases);
 
+    //     if(a.cases > b.cases){
+    //         return -1;
+    //     }
+    //     else {
+    //         return 1;
+    //     }
+    // });
+    // return sortedData;
+
+//or 
+
+ return sortedData.sort((a,b) => a.cases > b.cases ? -1 : 1); 
+
+};
+
+export const prettyPrintStat = (stat) => 
+(stat ? `+${numeral(stat).format("0.0a")}` : "+0");
+
+
+//Draw circles on map
 export const showDataOnMap = (data, casesType='cases') => 
   data.map((country) => (
 <Circle
@@ -51,10 +63,17 @@ radius={
 }
 >
     <Popup>
-        <h1>I am a popup</h1>
+        {/* <h1>I am a popup</h1> */}
+        <div className="info-container">
+            <div className="info-flag"
+            style = {{ backgroundImage: `url(${country.countryInfo.flag})` }} />
+            <div className="info-name">{country.country}</div>
+            <div className="info-cases">Cases: {numeral(country.cases).format("0,0")}</div>
+            <div className="info-recovered">Recovered: {numeral(country.recovered).format("0,0")}</div>
+            <div className="info-deaths">Deaths: {numeral(country.deaths).format("0,0")}</div>
+        </div>
     </Popup>
 </Circle>
   ));
 
-//or 
-// return sortedData.sort((a,b) => a.cases > b.cases ? -1 : 1);
+

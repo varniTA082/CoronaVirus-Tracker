@@ -21,6 +21,8 @@ function App() {
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
+
+
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
     .then(response => response.json())
@@ -30,12 +32,14 @@ function App() {
   
   }, [])
 
+
 useEffect(() => {
   //code is asynchronous
   //code runs once
   //when the component loads annd not again
 
   const getCountriesData = async () => {
+
     await fetch ("https://disease.sh/v3/covid-19/countries")
     .then((response) => response.json())
     .then((data) => {
@@ -58,7 +62,6 @@ const onCountryChange = async(event) => {
   const countryCode = event.target.value;
 
   //console.log("code:",countryCode); testing
-
   const url = 
   countryCode === "worldwide" 
   ? "https://disease.sh/v3/covid-19/all" : 

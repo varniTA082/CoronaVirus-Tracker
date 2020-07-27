@@ -47,7 +47,7 @@ const options = {
     },
 }
 
-const buildChartData = (data,casesType='cases') => {
+const buildChartData = (data, casesType='cases') => {
     const chartData = [];
     let lastDataPoint;
     

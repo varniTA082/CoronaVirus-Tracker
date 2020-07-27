@@ -11,11 +11,11 @@
     border-top: 10px solid greenyellow;
 }
 
-.infoBox--red{
+.infoBox--red {
     border-color: red;
 }
 
-.infoBox__cases--green{
+.infoBox__cases--green {
     color: lightgreen !important;
 }
 

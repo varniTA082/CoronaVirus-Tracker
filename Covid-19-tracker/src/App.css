@@ -1,12 +1,12 @@
-*{
+* {
   margin: 0;
 }
 
-body{
+body {
 background-color: #f5f6fa;
 }
 
-.app{
+.app {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
@@ -32,18 +32,18 @@ flex-direction: column;
 flex-grow: 1;
 }
 
-.app__header{
+.app__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.app__left{
+.app__left {
   flex:0.9;
 }
 
-.app__graph{
+.app__graph {
   flex-grow: 1;
 }
 
@@ -52,13 +52,13 @@ flex-grow: 1;
   margin-bottom: 20px;
 }
 
-.app__stats{
+.app__stats {
   display: flex;
   justify-content: space-between;
 }
 
 @media (max-width: 990px) {
-  .app{
+  .app {
     flex-direction: column;
   }
 }

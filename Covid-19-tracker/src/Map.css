@@ -5,7 +5,17 @@
     border-radius: 20px;
     margin-top: 16px;
     box-shadow: 0 0 8px -4px rgba(0,0,0,0.5);
+  
 }
+
+/* .map {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 20px;
+ } */
 
 .map .leaflet-container {
     height: 100%;

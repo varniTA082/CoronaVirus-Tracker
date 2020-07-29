@@ -13,6 +13,7 @@ import "leaflet/dist/leaflet.css";
 // USEEFFECT = runs a piece of code based on a given condition
 
 function App() {
+
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
@@ -36,7 +37,7 @@ function App() {
 useEffect(() => {
   //code is asynchronous
   //code runs once
-  //when the component loads annd not again
+  //when the component loads and not again
 
   const getCountriesData = async () => {
 
@@ -98,7 +99,7 @@ console.log('countryinfo', countryInfo);
     {countries.map(country => (
     <MenuItem value={country.value}>{country.name}</MenuItem>
       ))}
-
+ 
         {/* <MenuItem value="worldwide">Worldwide</MenuItem>
         <MenuItem value="worldwide">Worldwide 1</MenuItem>
         <MenuItem value="worldwide">Worldwide 2</MenuItem>
